@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Root resets ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Amiri', serif;
+  background: #F4F0E8;
+  color: #4A3F35;
+  direction: rtl;
+  text-align: right;
+  overflow-x: hidden;
+}
+
+/* ─── Custom scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #F4F0E8; }
+::-webkit-scrollbar-thumb { background: #B89B5E; border-radius: 2px; }
+
+/* ─── Loading Screen ─────────────────────────────────────── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #1a1410;
+}
+.loading-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+  transform-origin: center center;
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08) translateY(-2%); }
+}
+
+/* ─── Embossed text on loading ───────────────────────────── */
+.embossed-text {
+  color: #FDFBF7;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(232, 193, 112, 0.35);
+  letter-spacing: 0.18em;
+}
+
+.embossed-gold {
+  background: linear-gradient(135deg, #FFF6DC 0%, #E8C170 28%, #FBF1D5 52%, #C49A45 76%, #F0D48B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 22px rgba(232, 193, 112, 0.45));
+}
+
+/* ─── Progress bar ───────────────────────────────────────── */
+.progress-track {
+  width: 220px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C49A45, #FFF6DC, #E8C170);
+  border-radius: 2px;
+  transition: width 0.15s ease;
+  box-shadow: 0 0 10px rgba(232, 193, 112, 0.9);
+}
+.open-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 12px 38px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(232, 193, 112, 0.18) 0%, rgba(20, 16, 12, 0.72) 100%);
+  border: 1px solid rgba(232, 193, 112, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(232, 193, 112, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  transition: all 0.3s ease;
+}
+.open-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 235, 175, 0.9);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.7),
+    0 0 32px rgba(232, 193, 112, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* ─── Dust particles ─────────────────────────────────────── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(184,155,94,0.6);
+  pointer-events: none;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-80vh) translateX(var(--drift, 0px)) scale(0.4); opacity: 0; }
+}
+
+/* ─── Invitation card ────────────────────────────────────── */
+.invitation-card {
+  background: linear-gradient(170deg, #F8F5EE 0%, #F0EBE0 40%, #EDE6D8 100%);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(184,155,94,0.3);
+}
+.invitation-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(255,255,255,0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 85%, rgba(255,255,255,0.4) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Watermark dua ──────────────────────────────────────── */
+.watermark-dua {
+  font-family: 'Aref Ruqaa', serif;
+  color: rgba(140,123,105,0.1);
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  text-align: center;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Gold divider line ──────────────────────────────────── */
+.gold-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #B89B5E, transparent);
+  margin: 0 auto;
+}
+.gold-divider-sm {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #B89B5E, transparent);
+  margin: 0 auto;
+}
+
+/* ─── Couple names gradient text ─────────────────────────── */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #8A7040 0%, #D4BB84 35%, #B89B5E 50%, #D4BB84 65%, #8A7040 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 5s linear infinite;
+}
+@keyframes textShimmer {
+  to { background-position: 200% center; }
+}
+
+/* ─── Glowing closing line ───────────────────────────────── */
+.glow-text {
+  color: #8C7B69;
+  text-shadow:
+    0 0 10px rgba(184,155,94,0.4),
+    0 0 20px rgba(184,155,94,0.2),
+    0 1px 2px rgba(255,255,255,0.5);
+}
+
+/* ─── Info row icons ─────────────────────────────────────── */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  direction: rtl;
+}
+.info-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  flex: 1;
+  min-width: 0;
+}
+.info-cell + .info-cell {
+  border-right: 1px solid rgba(184,155,94,0.35);
+}
+.info-icon {
+  color: #B89B5E;
+  flex-shrink: 0;
+}
+
+/* ─── Flower corner overlay ──────────────────────────────── */
+.flower-corner-tl {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: clamp(100px, 30%, 170px);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.9;
+}
+.flower-corner-br {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: clamp(100px, 30%, 170px);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.9;
+  transform: rotate(180deg);
+}
+
+/* ─── Countdown ──────────────────────────────────────────── */
+.countdown-box {
+  background: linear-gradient(135deg, #F8F5EE, #EDE6D8);
+  border: 1px solid rgba(184,155,94,0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(140,123,105,0.1);
+}
+
+/* ─── RSVP form ──────────────────────────────────────────── */
+.rsvp-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(244,240,232,0.8);
+  border: 1px solid rgba(184,155,94,0.4);
+  border-radius: 8px;
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  color: #4A3F35;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-align: right;
+  direction: rtl;
+}
+.rsvp-input:focus {
+  border-color: #B89B5E;
+  box-shadow: 0 0 0 3px rgba(184,155,94,0.15);
+}
+.rsvp-btn {
+  background: linear-gradient(135deg, #8A7040, #B89B5E, #D4BB84);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(140,100,40,0.35);
+}
+.rsvp-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(140,100,40,0.45); }
+.rsvp-btn:active { transform: translateY(0); }
+
+/* ─── Map + calendar button ──────────────────────────────── */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Amiri', serif;
+  font-size: 1rem;
+  border: 1px solid rgba(184,155,94,0.5);
+  background: transparent;
+  color: #8C7B69;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.action-btn:hover {
+  background: rgba(184,155,94,0.1);
+  border-color: #B89B5E;
+  color: #8A7040;
+}
+
+/* ─── Transition overlay ─────────────────────────────────── */
+.transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: radial-gradient(ellipse at center bottom, #2a1e14 0%, #0e0a06 100%);
+  pointer-events: none;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .loading-bg { animation: none; }
+  .particle { animation: none; display: none; }
+  @keyframes textShimmer { to { background-position: 0 center; } }
+}
