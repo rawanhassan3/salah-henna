@@ -139,8 +139,9 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Aref Ruqaa, serif',
-              fontSize: 'clamp(1rem, 3.4vw, 1.25rem)',
-              color: '#4A3F35',
+              fontSize: 'clamp(1.05rem, 3.6vw, 1.3rem)',
+              fontWeight: 700,
+              color: '#34271D',
               textAlign: 'center',
               letterSpacing: '0.06em',
               marginBottom: 6,
@@ -157,10 +158,11 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Amiri, serif',
-              fontSize: 'clamp(0.75rem, 2.3vw, 0.88rem)',
-              color: '#706152',
+              fontSize: 'clamp(0.8rem, 2.5vw, 0.95rem)',
+              fontWeight: 700,
+              color: '#423326',
               textAlign: 'center',
-              lineHeight: 1.85,
+              lineHeight: 1.9,
               maxWidth: '340px',
               margin: '0 auto 10px',
             }}
@@ -178,8 +180,9 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Aref Ruqaa, serif',
-              fontSize: 'clamp(1.2rem, 4.4vw, 1.6rem)',
-              color: '#3A3026',
+              fontSize: 'clamp(1.25rem, 4.6vw, 1.65rem)',
+              fontWeight: 700,
+              color: '#281D14',
               textAlign: 'center',
               letterSpacing: '0.04em',
               marginTop: 4,
@@ -197,18 +200,19 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Amiri, serif',
-              fontSize: 'clamp(0.78rem, 2.4vw, 0.92rem)',
-              color: '#5C5147',
+              fontSize: 'clamp(0.82rem, 2.6vw, 0.96rem)',
+              fontWeight: 700,
+              color: '#382B1F',
               textAlign: 'center',
-              lineHeight: 1.8,
+              lineHeight: 1.85,
               marginBottom: 10,
             }}
           >
             <span>الحاج / </span>
-            <strong style={{ color: '#3A3026', fontWeight: 700 }}>{wedding.father1}</strong>
+            <strong style={{ color: '#281D14', fontWeight: 700 }}>{wedding.father1}</strong>
             <span style={{ margin: '0 8px', color: '#B89B5E' }}>،</span>
             <span>الحاج / </span>
-            <strong style={{ color: '#3A3026', fontWeight: 700 }}>{wedding.father2}</strong>
+            <strong style={{ color: '#281D14', fontWeight: 700 }}>{wedding.father2}</strong>
           </motion.div>
 
           {/* Invitation Intro Phrase */}
@@ -219,10 +223,11 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Amiri, serif',
-              fontSize: 'clamp(0.82rem, 2.5vw, 0.95rem)',
-              color: '#706152',
+              fontSize: 'clamp(0.86rem, 2.7vw, 1rem)',
+              fontWeight: 700,
+              color: '#423326',
               textAlign: 'center',
-              lineHeight: 1.6,
+              lineHeight: 1.65,
               marginBottom: 12,
             }}
           >
@@ -383,10 +388,11 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Amiri, serif',
-              fontSize: 'clamp(0.82rem, 2.5vw, 0.95rem)',
-              color: '#5C5147',
+              fontSize: 'clamp(0.86rem, 2.7vw, 1.02rem)',
+              fontWeight: 700,
+              color: '#34271D',
               textAlign: 'center',
-              lineHeight: 2.0,
+              lineHeight: 2.1,
               maxWidth: '350px',
               margin: '12px auto 16px',
             }}
@@ -427,9 +433,9 @@ export default function InvitationCard() {
                 <span
                   style={{
                     fontFamily: 'Reem Kufi, sans-serif',
-                    fontSize: 'clamp(0.58rem, 1.7vw, 0.7rem)',
+                    fontSize: 'clamp(0.6rem, 1.8vw, 0.72rem)',
                     color: '#8A7040',
-                    fontWeight: 500,
+                    fontWeight: 700,
                   }}
                 >
                   {item.label}
@@ -441,8 +447,9 @@ export default function InvitationCard() {
                     rel="noopener noreferrer"
                     style={{
                       fontFamily: 'Reem Kufi, sans-serif',
-                      fontSize: 'clamp(0.5rem, 1.45vw, 0.62rem)',
-                      color: '#635345',
+                      fontSize: 'clamp(0.52rem, 1.5vw, 0.65rem)',
+                      color: '#4A3B2E',
+                      fontWeight: 600,
                       textAlign: 'center',
                       lineHeight: 1.35,
                       textDecoration: 'underline',
@@ -455,8 +462,9 @@ export default function InvitationCard() {
                   <span
                     style={{
                       fontFamily: 'Reem Kufi, sans-serif',
-                      fontSize: 'clamp(0.5rem, 1.45vw, 0.62rem)',
-                      color: '#635345',
+                      fontSize: 'clamp(0.52rem, 1.5vw, 0.65rem)',
+                      color: '#4A3B2E',
+                      fontWeight: 600,
                       textAlign: 'center',
                       lineHeight: 1.35,
                     }}
@@ -476,9 +484,10 @@ export default function InvitationCard() {
             viewport={{ once: true }}
             style={{
               fontFamily: 'Aref Ruqaa, serif',
-              fontSize: 'clamp(1.15rem, 4.4vw, 1.55rem)',
+              fontSize: 'clamp(1.2rem, 4.6vw, 1.6rem)',
+              fontWeight: 700,
               textAlign: 'center',
-              color: '#4A3F35',
+              color: '#281D14',
               textShadow: '0 0 18px rgba(184,155,94,0.3), 0 1px 2px rgba(255,255,255,0.7)',
               lineHeight: 1.4,
               letterSpacing: '0.03em',

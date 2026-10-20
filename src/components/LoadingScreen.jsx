@@ -187,7 +187,7 @@ export default function LoadingScreen({ onEnter }) {
             marginTop: '4px',
           }}
         >
-          Salah &amp; Sarah
+          Salah &amp; Sara
         </motion.p>
 
         {/* Delicate gold divider */}

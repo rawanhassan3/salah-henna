@@ -11,7 +11,7 @@ export const wedding = {
   familyHeading: 'أفراح عائلات أبوريشة',
   father1: 'أحمد عبد المالك أبوريشة',
   father2: 'ناصر مبارك',
-  invitationIntro: 'يتشرفون بدعوة سيادتكم لحضور حفل زفاف',
+  invitationIntro: 'يتشرفان بدعوة سيادتكم لحضور حفل زفاف',
 
   // Couple
   groomAr: 'صلاح',
@@ -19,7 +19,7 @@ export const wedding = {
   brideAr: 'سارة',
   brideTitle: 'الدكتورة',
   groomEn: 'Salah',
-  brideEn: 'Sarah',
+  brideEn: 'Sara',
   groomTitleEn: 'Dr.',
   brideTitleEn: 'Dr.',
 
